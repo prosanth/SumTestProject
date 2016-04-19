@@ -1,10 +1,8 @@
 package com.example.prasanth_2.sumtestproject.tests;
 
 import android.test.ActivityInstrumentationTestCase2;
-import android.widget.TextView;
 
 import com.example.prasanth_2.sumtestproject.MainActivity;
-import com.example.prasanth_2.sumtestproject.R;
 
 /**
  * Created by Prasanth_2 on 4/18/2016.
