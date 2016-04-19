@@ -8,8 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button addBtn;
+    EditText first, second;
+    TextView sumDisplay;
+
+    int firstNum, secondNum, sumResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,23 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        addBtn = (Button) findViewById(R.id.button);
+        first = (EditText) findViewById(R.id.editText);
+        second = (EditText) findViewById(R.id.editText2);
+        sumDisplay = (TextView) findViewById(R.id.textView2);
+
+
+        addBtn.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        firstNum = Integer.parseInt(first.getText().toString());
+                        secondNum = Integer.parseInt(second.getText().toString());
+                        int sum = sum(firstNum, secondNum);
+                        sumDisplay.setText(Integer.toString(sum));
+                    }
+                }
+        );
     }
 
     @Override
@@ -48,5 +74,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //Adds two numbers
+    public int sum(int a, int b){
+        return a+b;
     }
 }
