@@ -78,6 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Adds two numbers
     public int sum(int a, int b){
-        return a+b;
+        return a-b;
     }
 }
